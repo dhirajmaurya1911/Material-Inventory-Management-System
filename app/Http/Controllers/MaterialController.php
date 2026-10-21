@@ -9,9 +9,7 @@ use Illuminate\Validation\Rule;
 
 class MaterialController extends Controller
 {
-    /**
-     * Display all materials with current balance.
-     */
+
     public function index()
     {
         //Fetch data from DB
@@ -23,9 +21,7 @@ class MaterialController extends Controller
         return view('materials.index', compact('materials'));
     }
 
-    /**
-     * Show add material form.
-     */
+
     public function create()
     {
         //view page
@@ -34,9 +30,7 @@ class MaterialController extends Controller
         return view('materials.create', compact('categories'));
     }
 
-    /**
-     * Save new material.
-     */
+
     public function store(Request $request)
     {
         //when you click add then call this function
@@ -114,9 +108,7 @@ class MaterialController extends Controller
             ->with('success', 'Material updated successfully.');
     }
 
-    /**
-     * Soft delete material.
-     */
+    
     public function destroy(Material $material)
     {
         //Delete the records
